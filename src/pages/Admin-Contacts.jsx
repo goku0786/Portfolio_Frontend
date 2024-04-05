@@ -7,10 +7,12 @@ export const AdminContacts = () => {
 
   const [contactData, setContactData] = useState([]);
 
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const getContactsData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/contacts`,
+        `${baseurl}/api/admin/contacts`,
 
         {
           method: "GET",
@@ -32,7 +34,7 @@ export const AdminContacts = () => {
   const deleteContactById = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/contacts/delete/${id}`,
+        `${baseurl}/api/admin/contacts/delete/${id}`,
         {
           method: "DELETE",
           headers: {

@@ -10,6 +10,9 @@ const defaultContactFormData = {
 
 
 export const Contact = () => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const [contact, setContact] = useState(defaultContactFormData);
 
   const [userData, setUserData] = useState(true);
@@ -39,7 +42,7 @@ export const Contact = () => {
   const handleForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/form/contact", {
+      const response = await fetch(`${baseurl}/api/form/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

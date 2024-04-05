@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 export const AdminUsers = () => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const { authorizationToken } = useAuth();
 
   const [user, setUser] = useState([]);
 
   const getAllUsersData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/admin/users", {
+      const response = await fetch(`${baseurl}/api/admin/users`, {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -27,7 +30,7 @@ export const AdminUsers = () => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/delete/${id}`,
+        `${baseurl}/api/admin/users/delete/${id}`,
         {
           method: "DELETE",
           headers: {

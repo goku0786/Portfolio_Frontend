@@ -8,6 +8,9 @@ import { RxEyeOpen } from "react-icons/rx";
 import { GoEyeClosed } from "react-icons/go";
 
 export const Login = () => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const [showpassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
     // username: "",
@@ -38,7 +41,7 @@ export const Login = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/login`, {
+      const response = await fetch(`${baseurl}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

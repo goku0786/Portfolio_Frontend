@@ -8,6 +8,8 @@ import { RxEyeOpen } from "react-icons/rx";
 import { GoEyeClosed } from "react-icons/go";
 
 export const Register = () => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
   
   const [showpassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
@@ -40,7 +42,7 @@ export const Register = () => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/register`, {
+      const response = await fetch(`${baseurl}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

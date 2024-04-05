@@ -3,6 +3,9 @@ import { createContext, useContext, useEffect, useState } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");
   const [info, setInfo] = useState([]);
@@ -26,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/api/auth/user", {
+      const response = await fetch(`${baseurl}/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -49,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   const getServices = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/data/service", {
+      const response = await fetch(`${baseurl}/api/data/service`, {
         method: "GET",
       });
       if (response.ok) {

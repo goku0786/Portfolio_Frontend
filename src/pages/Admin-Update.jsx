@@ -5,6 +5,9 @@ import { toast } from "react-toastify";
 import { useEffect } from "react";
 
 export const AdminUpdate = () => {
+
+  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -20,7 +23,7 @@ export const AdminUpdate = () => {
   const getSingleUserData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/${params.id}`,
+        `${baseurl}/api/admin/users/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -55,7 +58,7 @@ export const AdminUpdate = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/users/update/${params.id}`,
+        `${baseurl}/api/admin/users/update/${params.id}`,
         {
           method: "PATCH",
           headers: {
