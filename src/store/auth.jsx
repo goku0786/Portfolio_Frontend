@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const authorizationToken = `Bearer ${token}`;
 
-  const BaseUrl=import.meta.env.BASE_URL;
+  const BaseUrl="http://localhost:5000";
 
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
