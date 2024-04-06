@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const authorizationToken = `Bearer ${token}`;
 
-  const BaseUrl="http://localhost:5000";
+  const BaseUrl="https://portfolio-backend-bal8.onrender.com";
 
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
