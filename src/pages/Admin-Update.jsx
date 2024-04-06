@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export const AdminUpdate = () => {
 
-  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+  const baseurl = "http://localhost:5000"
 
   const [data, setData] = useState({
     username: "",

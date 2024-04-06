@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export const AdminUsers = () => {
 
-  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+  const baseurl = "http://localhost:5000"
 
   const { authorizationToken } = useAuth();
 

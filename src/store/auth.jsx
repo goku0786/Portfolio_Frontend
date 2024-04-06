@@ -4,7 +4,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
 
-  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+  const baseurl = "http://localhost:5000"
 
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");

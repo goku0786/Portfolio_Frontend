@@ -7,7 +7,7 @@ export const AdminContacts = () => {
 
   const [contactData, setContactData] = useState([]);
 
-  const baseurl = "https://portfolio-backend-bal8.onrender.com"
+  const baseurl = "http://localhost:5000"
 
   const getContactsData = async () => {
     try {
