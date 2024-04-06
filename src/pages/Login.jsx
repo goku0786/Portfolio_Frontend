@@ -9,8 +9,6 @@ import { GoEyeClosed } from "react-icons/go";
 
 export const Login = () => {
 
-  const baseurl = "http://localhost:5000"
-
   const [showpassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
     // username: "",
@@ -35,13 +33,13 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const { storeTokenInLS } = useAuth();
+  const { storeTokenInLS, BaseUrl } = useAuth();
 
   const handleForm = async (e) => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch(`${baseurl}/api/auth/login`, {
+      const response = await fetch(`${BaseUrl}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

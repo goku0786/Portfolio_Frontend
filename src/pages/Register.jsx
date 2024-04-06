@@ -8,8 +8,6 @@ import { RxEyeOpen } from "react-icons/rx";
 import { GoEyeClosed } from "react-icons/go";
 
 export const Register = () => {
-
-  const baseurl = "http://localhost:5000"
   
   const [showpassword, setShowPassword] = useState(false);
   const [user, setUser] = useState({
@@ -36,13 +34,13 @@ export const Register = () => {
 
   const navigate = useNavigate();
 
-  const { storeTokenInLS } = useAuth();
+  const { storeTokenInLS, BaseUrl } = useAuth();
 
   const handleForm = async (e) => {
     e.preventDefault();
     console.log(user);
     try {
-      const response = await fetch(`${baseurl}/api/auth/register`, {
+      const response = await fetch(`${BaseUrl}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

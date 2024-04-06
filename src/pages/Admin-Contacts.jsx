@@ -3,16 +3,14 @@ import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 
 export const AdminContacts = () => {
-  const { authorizationToken } = useAuth();
+  const { authorizationToken,BaseUrl } = useAuth();
 
   const [contactData, setContactData] = useState([]);
-
-  const baseurl = "http://localhost:5000"
 
   const getContactsData = async () => {
     try {
       const response = await fetch(
-        `${baseurl}/api/admin/contacts`,
+        `${BaseUrl}/api/admin/contacts`,
 
         {
           method: "GET",
@@ -34,7 +32,7 @@ export const AdminContacts = () => {
   const deleteContactById = async (id) => {
     try {
       const response = await fetch(
-        `${baseurl}/api/admin/contacts/delete/${id}`,
+        `${BaseUrl}/api/admin/contacts/delete/${id}`,
         {
           method: "DELETE",
           headers: {

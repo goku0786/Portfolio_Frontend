@@ -6,8 +6,6 @@ import { useEffect } from "react";
 
 export const AdminUpdate = () => {
 
-  const baseurl = "http://localhost:5000"
-
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -16,14 +14,14 @@ export const AdminUpdate = () => {
 
   const params = useParams();
   console.log("params single user", params);
-  const { authorizationToken } = useAuth();
+  const { authorizationToken,BaseUrl } = useAuth();
 
   // get single user data
 
   const getSingleUserData = async () => {
     try {
       const response = await fetch(
-        `${baseurl}/api/admin/users/${params.id}`,
+        `${BaseUrl}/api/admin/users/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -58,7 +56,7 @@ export const AdminUpdate = () => {
 
     try {
       const response = await fetch(
-        `${baseurl}/api/admin/users/update/${params.id}`,
+        `${BaseUrl}/api/admin/users/update/${params.id}`,
         {
           method: "PATCH",
           headers: {

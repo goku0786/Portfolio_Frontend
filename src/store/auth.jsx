@@ -4,13 +4,13 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
 
-  const baseurl = "http://localhost:5000"
-
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");
   const [info, setInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const authorizationToken = `Bearer ${token}`;
+
+  const BaseUrl=import.meta.env.BASE_URL;
 
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${baseurl}/api/auth/user`, {
+      const response = await fetch(`${BaseUrl}/api/auth/user`, {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   const getServices = async () => {
     try {
-      const response = await fetch(`${baseurl}/api/data/service`, {
+      const response = await fetch(`${BaseUrl}/api/data/service`, {
         method: "GET",
       });
       if (response.ok) {
@@ -80,6 +80,7 @@ export const AuthProvider = ({ children }) => {
         info,
         authorizationToken,
         isLoading,
+        BaseUrl,
       }}
     >
       {children}

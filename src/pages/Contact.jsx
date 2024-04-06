@@ -11,12 +11,10 @@ const defaultContactFormData = {
 
 export const Contact = () => {
 
-  const baseurl = "http://localhost:5000"
-
   const [contact, setContact] = useState(defaultContactFormData);
 
   const [userData, setUserData] = useState(true);
-  const { user } = useAuth();
+  const { user, BaseUrl } = useAuth();
 
   if (userData && user) {
     setContact({
@@ -42,7 +40,7 @@ export const Contact = () => {
   const handleForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${baseurl}/api/form/contact`, {
+      const response = await fetch(`${BaseUrl}/api/form/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
