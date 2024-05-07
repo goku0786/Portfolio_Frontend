@@ -28,7 +28,6 @@ export const Service = () => {
                   alt="loading"
                 />
               </span>
-              <div></div>
               <span>
                 A background remover service that removes backgrounds from
                 images in easy way.
