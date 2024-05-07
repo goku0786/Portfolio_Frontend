@@ -10,9 +10,8 @@ function Navbar() {
   const { isLoggedIn, user } = useAuth();
   const [open, setOpen] = useState(false);
 
-
   return (
-    <div className="shadow-md w-full fixed z-10 top-0 left-0" >
+    <div className="shadow-md w-full fixed z-10 top-0 left-0">
       <div className="md:flex items-center justify-between bg-gray-300 py-3 md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-Oxanium

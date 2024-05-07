@@ -220,7 +220,7 @@ export const About = () => {
             Bootstrap <p className="font-normal"> Above Intermediate</p>
           </p>
           <p className="font-bold">
-            Tailwin CSS <p className="font-normal"> Above Intermediate</p>
+            Tailwind CSS <p className="font-normal"> Above Intermediate</p>
           </p>
           <p className="font-bold">
             Material UI <p className="font-normal"> Above Intermediate</p>
