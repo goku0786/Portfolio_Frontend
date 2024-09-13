@@ -16,6 +16,8 @@ import { AdminHome } from "./pages/Admin-Home";
 import { AdminUpdate } from "./pages/Admin-Update";
 import { Footer } from "./components/Footer";
 import RemoveBackgroundService from "./pages/RemoveBackgroundService";
+import QRCodeService from "./pages/QRCodeService";
+// import ImageGenerator from "./pages/ImageGenerator";
 
 const App = () => {
   return (
@@ -30,6 +32,14 @@ const App = () => {
           <Route
             path="/service/remove-bg"
             element={<RemoveBackgroundService />}
+          />
+          {/* <Route
+            path="/service/image-generator"
+            element={< ImageGenerator />}
+          /> */}
+          <Route
+            path="/service/qr-generator"
+            element={< QRCodeService />}
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
