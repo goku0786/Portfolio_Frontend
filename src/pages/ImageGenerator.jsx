@@ -16,7 +16,7 @@
 //     <div className="pt-[60px] text-white flex flex-col gap-10 items-center">
 //       <h1 className="font-bold text-4xl">
 //         AI Image
-//         <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
+//         <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text ml-2">
 //           Generator
 //         </span>
 //       </h1>

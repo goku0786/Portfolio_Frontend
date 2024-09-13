@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full bg-black py-[20px] px-[50px] mt-[65px] border-2 border-l-0 border-r-0 border-b-0 border-[rgba(255,255,255,.2)] ">
+    <footer className="absolute w-full bg-black py-[20px] px-[50px] mt-[65px] border-2 border-l-0 border-r-0 border-b-0 border-[rgba(255,255,255,.2)] ">
       <ul className="text-white flex justify-center items-center gap-4 text-2xl ">
         <li className="hover:-translate-y-1 transition-all ">
           <a href="#">
